@@ -1,16 +1,15 @@
+import Notiflix from 'notiflix';
+
 export async function fetchCountries(name) {
   try {
-    const response = await fetch(
-      `https://restcountries.com/v2/name/${name}?fields=name.official,capital,population,flags.svg,languages`
-    );
-    
+    const response = await fetch(`https://restcountries.com/v2/name/${name}?fields=name,flags.svg,capital,population,languages`);
     if (!response.ok) {
       throw new Error('Country not found');
     }
-    
-    const data = await response.json();
-    return data;
+    const countries = await response.json();
+    return countries;
   } catch (error) {
-    throw new Error('Oops, there is no country with that name');
+    Notiflix.Notify.failure('Oops, there is no country with that name');
+    throw new Error('Error fetching countries');
   }
 }
