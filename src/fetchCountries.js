@@ -2,7 +2,7 @@ import Notiflix from 'notiflix';
 
 export async function fetchCountries(name) {
   try {
-    const response = await fetch(`https://restcountries.com/v2/name/${name}?fields=name,flags.svg,capital,population,languages`);
+    const response = await fetch(`https://restcountries.com/v3.1/name/${name}?fields=name.official,flags.svg,capital,population,languages`);
     if (!response.ok) {
       throw new Error('Country not found');
     }
