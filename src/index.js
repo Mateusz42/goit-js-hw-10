@@ -61,4 +61,8 @@ const debouncedInputHandler = debounce(async event => {
     }
 }, 300);
 
+<<<<<<< HEAD
 searchBox.addEventListener('input', debouncedInputHandler);
+=======
+searchBox.addEventListener('input', debouncedInputHandler);
+>>>>>>> 4926b822291eeb85d4f17f1351090f6fb8c74b2c
