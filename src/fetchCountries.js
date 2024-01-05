@@ -13,8 +13,4 @@ export async function fetchCountries(name) {
       Notiflix.Notify.failure('Oops, there is no country with that name');
       throw new Error('Error fetching countries');
     }
-<<<<<<< HEAD
-  }
-=======
-  }
->>>>>>> 4926b822291eeb85d4f17f1351090f6fb8c74b2c
+}
